@@ -21,5 +21,7 @@ from django_project import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('',views.home_page),
     path('about-us/', views.about_us),
+    path('about-us/<courseid>', views.courses),
 ]
