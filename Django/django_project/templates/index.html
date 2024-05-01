@@ -3,19 +3,53 @@
 <html>
     <head>
      
-        <title>Home Page</title>
+        <title>{{title}}</title>
 
         <style>
             .main{
-             width: 1200px;
+             width: 500px;
              background-color: red;
+             color:azure;
+             padding: 15px;
+             font-size: 20px;
             } 
          </style>
     </head>
     <body>
         <h1>HELLO!</h1> 
+        <h2>{{bdata}}</h2>
+        <div class="main">{{bdata}}</div>
         <div class = "main"><p>I want you to know that this is the Home Page.....</p></div>
-        <p>I want you to know that this is the Home Page.....</p>
-       
+        <br/>
+        {% for i in names %}
+        <div>{{forloop.counter}} {{i}}</div>
+        {% endfor %}
+        <br/>
+        <table border="1" cellpadding="5" >
+            <tr>
+                <th>Name</th>
+                <th>Education</th>
+            </tr>
+            {% for j in details %}
+            <tr>
+                <td>{{j.name}}</td>
+                <td>{{j.education}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        {% if numbers|length > 0 %}
+        
+        {% for n in numbers %}
+        {% if n > 50 %}
+        {{n}}
+        {% endif %}
+
+        {% endfor %}
+
+        {% else %}
+        <div>Nothing to show</div>
+        
+        {% endif %}
     </body>
 </html>
